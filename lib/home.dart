@@ -137,6 +137,7 @@ class _homepageState extends State<homepage> {
               trailing: new Icon(Icons.work),
               title: new Text('Placements | Tips'),
               onTap: () {
+                        Navigator.of(context).pop();
                        Navigator.of(context).pushNamed(placements.routename);
                      },
               ),
@@ -152,7 +153,7 @@ class _homepageState extends State<homepage> {
               trailing: new Icon(Icons.web),
               title: new Text('Visit Site'),
               onTap: () {
-                      Navigator.of(context).pop();
+                      
                       Navigator.of(context).pushReplacementNamed(homepage.routename);
                      },
               
@@ -174,7 +175,10 @@ class _homepageState extends State<homepage> {
               new Divider(),
                  new ListTile (
               trailing: new Icon(Icons.verified_user),
-              title: new Text('Version'),
+              title: new Text('Version - 1.0'),
+              onLongPress: () {
+                Text("Version");
+              },
               )
               
           ],

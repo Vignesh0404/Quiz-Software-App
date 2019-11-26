@@ -99,7 +99,7 @@ class _SlideScreenState extends State<SlideScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                 FlatButton(
-                  child: Text('Getting Started', style: TextStyle(
+                  child: Text('Get Started', style: TextStyle(
                     fontSize: 18.0,
                     fontFamily: "teko",
                     

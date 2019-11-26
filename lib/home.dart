@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testsoft/about.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:testsoft/higheredu.dart';
 import 'package:testsoft/placements.dart';
@@ -9,12 +10,7 @@ class homepage extends StatefulWidget {
   _homepageState createState() => _homepageState();
 }
 
-
-
 class _homepageState extends State<homepage> {
-
-  
-  
 
   List<String> images = [
     "images/placements.png",
@@ -135,6 +131,10 @@ class _homepageState extends State<homepage> {
               new ListTile (
               trailing: new Icon(Icons.info),
               title: new Text('About | FORESE'),
+              onTap: () {
+                Navigator.of(context).pop();
+                       Navigator.of(context).pushNamed(about.routename);
+              },
               ),
             new ListTile (
               trailing: new Icon(Icons.work),

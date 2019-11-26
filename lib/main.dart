@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:testsoft/home.dart';
 import 'placements.dart';
 import 'higheredu.dart';
+import 'about.dart';
 import 'package:testsoft/splashscreen.dart';
 
 void main() => runApp(MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         homepage.routename:(ctx) => homepage(),
         placements.routename:(ctx) => placements(),
         higheredu.routename:(ctx) => higheredu(),
+        about.routename:(ctx) => about()
       },
     );
   }

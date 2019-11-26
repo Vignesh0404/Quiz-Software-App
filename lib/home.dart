@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:testsoft/higheredu.dart';
 import 'package:testsoft/placements.dart';
 
@@ -152,16 +153,15 @@ class _homepageState extends State<homepage> {
                new ListTile (
               trailing: new Icon(Icons.web),
               title: new Text('Visit Site'),
-              onTap: () {
-                      
-                      Navigator.of(context).pushReplacementNamed(homepage.routename);
-                     },
-              
+              onTap: () => launch('https://forese.in/')
+ 
+                    
               ),
-              
               new ListTile (
               trailing: new Icon(Icons.code),
               title: new Text('View Code - Github'),
+              onTap: () => launch('https://github.com/Vignesh0404/Quiz-Software-App')
+              
               ),
               new ListTile (
               trailing: new Icon(Icons.monetization_on),
@@ -176,9 +176,8 @@ class _homepageState extends State<homepage> {
                  new ListTile (
               trailing: new Icon(Icons.verified_user),
               title: new Text('Version - 1.0'),
-              onLongPress: () {
-                Text("Version");
-              },
+              onLongPress: () => launch('https://vignesh0404.github.io/')
+                
               )
               
           ],

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:testsoft/higheredu.dart';
+import 'package:testsoft/placements.dart';
 
 class homepage extends StatefulWidget {
+  static const routename = '/home';
   @override 
   _homepageState createState() => _homepageState();
 }
 
 class _homepageState extends State<homepage> {
+
+  
+  
 
   List<String> images = [
     "images/placements.png",
@@ -97,13 +103,81 @@ class _homepageState extends State<homepage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Forese Test Software",
+          "SVCE QUIZ MASTER",
           style: TextStyle(
             fontSize: 30.0,
            fontFamily: 'Teko',
             fontWeight: FontWeight.w700,
-            fontStyle: FontStyle.italic,
+            fontStyle: FontStyle.normal,
           ),
+        ),
+      ),
+      drawer: new Drawer(
+        child: new ListView(
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+              accountName: new Text("SVCE QUIZ MASTER"),
+              accountEmail: new Text("Powered by FORESE©"),
+              currentAccountPicture: new CircleAvatar(
+                backgroundColor: Colors.white38,
+              ),
+            ),
+            new ListTile (
+              trailing: new Icon(Icons.home),
+              title: new Text('Home'),
+              onTap: () {
+                       Navigator.of(context).pushReplacementNamed(homepage.routename);
+                     },
+              ),
+              new ListTile (
+              trailing: new Icon(Icons.info),
+              title: new Text('About | FORESE'),
+              ),
+            new ListTile (
+              trailing: new Icon(Icons.work),
+              title: new Text('Placements | Tips'),
+              onTap: () {
+                       Navigator.of(context).pushNamed(placements.routename);
+                     },
+              ),
+               new ListTile (
+              trailing: new Icon(Icons.flight),
+              title: new Text('Higher edu   | Tips'),
+              onTap: () {
+                      Navigator.of(context).pop();
+                       Navigator.of(context).pushNamed(higheredu.routename);
+                     },
+              ),
+               new ListTile (
+              trailing: new Icon(Icons.web),
+              title: new Text('Visit Site'),
+              onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pushReplacementNamed(homepage.routename);
+                     },
+              
+              ),
+              
+              new ListTile (
+              trailing: new Icon(Icons.code),
+              title: new Text('View Code - Github'),
+              ),
+              new ListTile (
+              trailing: new Icon(Icons.monetization_on),
+              title: new Text('Donate'),
+              ),
+               new ListTile (
+              trailing: new Icon(Icons.close),
+              title: new Text('Close'),
+              onTap: () => Navigator.of(context).pop(),
+              ),
+              new Divider(),
+                 new ListTile (
+              trailing: new Icon(Icons.verified_user),
+              title: new Text('Version'),
+              )
+              
+          ],
         ),
       ),
       body: ListView(

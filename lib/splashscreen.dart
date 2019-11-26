@@ -41,7 +41,7 @@ class _splashscreenState extends State<splashscreen> {
                         backgroundColor: Colors.white,
                         radius: 40.0,
                         child: Icon(
-                          Icons.assessment,
+                          Icons.assignment,
                           color: Colors.black,
                           size: 40.0,
                         ),

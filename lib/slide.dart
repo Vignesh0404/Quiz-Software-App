@@ -4,6 +4,7 @@ import 'package:testsoft/slidedots.dart';
 import 'dart:async';
 import 'SlideItem.dart';
 import 'slidedots.dart';
+import 'home.dart';
 
 class SlideScreen extends StatefulWidget {
   @override
@@ -110,7 +111,9 @@ class _SlideScreenState extends State<SlideScreen> {
                      padding: const EdgeInsets.all(15.0),
                      color: Theme.of(context).primaryColor ,
                      textColor: Colors.white,
-                     onPressed: () {},
+                     onPressed: () {
+                       Navigator.of(context).pushReplacementNamed(homepage.routename);
+                     },
                 ),
         
               ],)

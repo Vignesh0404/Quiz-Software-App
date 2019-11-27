@@ -50,6 +50,10 @@ flutter:
     - images/placements.png
     - images/eu.png
     - images/quiz.jpg
+    - images/success.png
+    - images/bad.png
+    - images/py.png
+    - images/java.png
   
    
 

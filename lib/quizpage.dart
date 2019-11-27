@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:testsoft/resultpage.dart';
 
 class getquiz extends StatelessWidget {
   const getquiz({Key key}) : super(key: key);
@@ -64,7 +65,10 @@ class _quizpageState extends State<quizpage> {
     setState(() {
       if(i < 5) {
       i++; 
-    }else {
+    }else { // it navigates to the result page when the quiz is done
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => resultpage(marks : marks),
+      ));
 
     } // to reset the color of the options when it changes to the next question
     buttoncolor["a"] = Colors.black;
@@ -103,7 +107,7 @@ class _quizpageState extends State<quizpage> {
 
   void answercheck(String choice) {
     if(mydata[2]["1"] == mydata[1]["1"][choice]){  //to check the answer and display the corresponding color
-      marks = marks + 5;
+      marks = marks + 1; //increment mark by 1
       colordisp = rightans;
     }
     else {
@@ -113,7 +117,7 @@ class _quizpageState extends State<quizpage> {
       buttoncolor[choice] = colordisp; //the choice selected = the corresponding color the button should show
       canceltimer = true; 
     });
-      Timer(Duration(seconds : 2), changequestion); //to change the question to the next one after 2 seconds
+      Timer(Duration(seconds : 1 ), changequestion); //to change the question to the next one after 2 seconds
 
   }
 

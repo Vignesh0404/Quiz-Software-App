@@ -15,13 +15,13 @@ class homepage extends StatefulWidget {
 class _homepageState extends State<homepage> {
 
   List<String> images = [
-    "images/placements.png",
-    "images/eu.png"
+    "images/py.png",
+    "images/java.png"
   ];
 
   List<String> content =[
-    "Hello nibbas, Welcome to placement 101. Fucking solve these shit to get placed da dei.",
-    "Waddup bitach, what's poppin', tatz how we role. To more endless fake accents, get good gre score da"
+    "This quiz consists of questions from the basic fundamental programming language python",
+    "WThis quiz consists of questions from the basic fundamental programming language java"
   ];
 
   Widget customcard(String langname, String image, String content){
@@ -194,8 +194,8 @@ class _homepageState extends State<homepage> {
       ),
       body: ListView(
         children: <Widget>[
-          customcard("Option A - Placements", images[0], content[0]),
-          customcard("Option B - Higher Education", images[1], content[1]),
+          customcard("Introduction to Python", images[0], content[0]),
+          customcard("Introduction to Java", images[1], content[1]),
         ],
       ),
     );

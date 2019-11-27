@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:testsoft/home.dart';
-import 'package:testsoft/quizpage.dart';
 import 'slide.dart';
 
 class splashscreen extends StatefulWidget {

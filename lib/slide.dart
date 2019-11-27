@@ -19,7 +19,7 @@ class _SlideScreenState extends State<SlideScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer.periodic(Duration(seconds: 4), (Timer timer) {
+    Timer.periodic(Duration(seconds: 3), (Timer timer) {
       if(currentPage < 2) {
         currentPage++;
       } else {

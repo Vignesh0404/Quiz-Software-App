@@ -19,7 +19,7 @@ class _SlideScreenState extends State<SlideScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer.periodic(Duration(seconds: 6), (Timer timer) {
+    Timer.periodic(Duration(seconds: 4), (Timer timer) {
       if(currentPage < 2) {
         currentPage++;
       } else {
@@ -57,7 +57,7 @@ class _SlideScreenState extends State<SlideScreen> {
       
       body: 
          Container(
-           color: Colors.black,
+           color: Colors.white38,
            child: Padding(
              padding: const EdgeInsets.all(20.0),
              child: Column(

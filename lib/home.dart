@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:testsoft/about.dart';
+import 'package:testsoft/quizpage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:testsoft/higheredu.dart';
 import 'package:testsoft/placements.dart';
@@ -29,7 +31,9 @@ class _homepageState extends State<homepage> {
       ),
       child: InkWell(
         onTap: (){
-          print('card tapped');
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (context) => getquiz()
+          ));
           
         },
         child: Material(
@@ -99,6 +103,9 @@ class _homepageState extends State<homepage> {
   @override
   
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([  //to make sure the app is alway on portrait mode
+      DeviceOrientation.portraitDown, DeviceOrientation.portraitUp,
+    ]);
     return Scaffold(
       appBar: AppBar(
         title: Text(

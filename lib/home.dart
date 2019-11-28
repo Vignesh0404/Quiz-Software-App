@@ -122,8 +122,25 @@ class _homepageState extends State<homepage> {
         child: new ListView(
           children: <Widget>[
             new UserAccountsDrawerHeader(
-              accountName: new Text("SVCE QUIZ MASTER"),
-              accountEmail: new Text("Powered by FORESE©"),
+              decoration: BoxDecoration(
+              color: Colors.indigo[300],
+              image: DecorationImage(
+                      image: new ExactAssetImage('images/cpo.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+              ),
+              accountName: new Container(
+                child: Text(
+                  "SVCE QUIZ MASTER",
+                style: TextStyle(
+                   color: Colors.white
+                ),
+              )),
+              accountEmail: new Text("Powered by FORESE©",
+              style: TextStyle(
+                
+              ),
+              ),
               currentAccountPicture: new CircleAvatar(
                 backgroundColor: Colors.white38,
               ),

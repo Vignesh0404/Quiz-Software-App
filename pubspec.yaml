@@ -52,6 +52,7 @@ flutter:
     - images/quiz.jpg
     - images/success.png
     - images/bad.png
+    - images/cpo.jpg
     - images/py.png
     - images/java.png
   
@@ -91,7 +92,20 @@ flutter:
     - family: Odibee Sans
       fonts:
         - asset: fonts/OdibeeSans-Regular.ttf 
-
+    
+    - family: Acme
+      fonts: 
+        - asset: fonts/Acme-Regular.tff
    
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Bold.tff 
+        - asset: fonts/Poppins-Black.tff
+          weight: 500    
+        - asset: fonts/Poppins-ExtraBold.tff 
+          weight: 700   
+        - asset: fonts/Poppins-BlackItalic.tff
+          weight: 300       
+        
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages

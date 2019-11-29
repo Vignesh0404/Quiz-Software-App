@@ -55,6 +55,11 @@ flutter:
     - images/cpo.jpg
     - images/py.png
     - images/java.png
+    - images/sis.png
+    - images/about.jpg
+    - images/code.jpg
+    - images/analysis.jpg
+    
   
    
 
@@ -80,32 +85,12 @@ flutter:
         - asset: fonts/Teko-Medium.ttf 
           weight: 500
           style: italic 
-    - family: Qunado
-      fonts:
-        - asset: fonts/Quando.ttf   
     - family: Satisfy
       fonts:
-        - asset: fonts/Satisfy.ttf   
-    - family: Alike-Regular
-      fonts:
-        - asset: fonts/Alike-Regular.ttf     
+        - asset: fonts/Satisfy.ttf        
     - family: Odibee Sans
       fonts:
         - asset: fonts/OdibeeSans-Regular.ttf 
-    
-    - family: Acme
-      fonts: 
-        - asset: fonts/Acme-Regular.tff
-   
-    - family: Poppins
-      fonts:
-        - asset: fonts/Poppins-Bold.tff 
-        - asset: fonts/Poppins-Black.tff
-          weight: 500    
-        - asset: fonts/Poppins-ExtraBold.tff 
-          weight: 700   
-        - asset: fonts/Poppins-BlackItalic.tff
-          weight: 300       
         
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages

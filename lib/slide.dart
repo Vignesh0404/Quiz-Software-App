@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:testsoft/Slidemodel.dart';
+import 'package:testsoft/login.dart';
 import 'package:testsoft/slidedots.dart';
 import 'dart:async';
 import 'SlideItem.dart';
 import 'slidedots.dart';
-import 'home.dart';
+
 
 class SlideScreen extends StatefulWidget {
   @override
@@ -53,6 +55,9 @@ class _SlideScreenState extends State<SlideScreen> {
 
   @override 
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([  //to make sure the app is alway on portrait mode
+      DeviceOrientation.portraitDown, DeviceOrientation.portraitUp,
+      ]);
     return Scaffold(
       
       body: 
@@ -112,7 +117,9 @@ class _SlideScreenState extends State<SlideScreen> {
                      color: Theme.of(context).primaryColor ,
                      textColor: Colors.white,
                      onPressed: () {
-                       Navigator.of(context).pushReplacementNamed(homepage.routename);
+                       Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => login(),
+                       ));
                      },
                 ),
         

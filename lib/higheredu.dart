@@ -11,10 +11,14 @@ class higheredu extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('HIGHER EDU | TIPS '),
+        title: new Text('Analytical Concepts',
+        style: TextStyle(
+          fontFamily: "teko",
+          fontSize: 30,
+        ),),
       ),
       body: new Center (
-        child: new Text("HIGHER EDUCATION | TIPS"),
+        child: new Text("Analytical | Concepts"),
 
       ),
       

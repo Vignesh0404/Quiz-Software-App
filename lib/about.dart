@@ -46,7 +46,7 @@ class about extends StatelessWidget {
                   height: 150,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: new ExactAssetImage('images/cpo.jpg'),
+                      image: new ExactAssetImage('images/about.jpg'),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(75.0)
@@ -58,7 +58,7 @@ class about extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 Text(
-                  "MURALEEDHARAN S",
+                  "SUNDARAM FINANCE",
                   style: TextStyle(
                     fontFamily: "teko",
                     fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ class about extends StatelessWidget {
                 ),
                 SizedBox(height: 8.0),
                 Text(
-                  "Chief Placement Officer",
+                  '"Enduring values. New age thinking."',
                 style: TextStyle(
                   color: Colors.indigo,
                   fontWeight: FontWeight.bold,
@@ -85,7 +85,7 @@ class about extends StatelessWidget {
                     shadowColor: Colors.indigoAccent,
                     elevation: 7.0,
                     child: GestureDetector(
-                      onTap: () => launch('https://forese.in/'),
+                      onTap: () => launch('https://www.sundaramfinance.in/'),
                       child: Center(
                         child: Text(
                           "Know more",
@@ -101,16 +101,16 @@ class about extends StatelessWidget {
                 ),
                 SizedBox(height: 25.0),
                 Text(
-                  "The Placement Cell of SVCE",
+                  "SUNDARAM INFOTECH SOLUTIONS",
                   style: TextStyle(
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w900,
-                    fontSize: 26.0,
+                    fontFamily: "teko",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 30.0,
                   ),
                 ),
                 Center(
                   child: Text(
-                    "\n“Improving employability of students”",
+                    "\n“We are the backbone of SF”",
                     style: TextStyle(
                       fontFamily: "Poppins, sans-serif",
                       fontStyle: FontStyle.italic,

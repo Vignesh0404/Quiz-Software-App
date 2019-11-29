@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:testsoft/login.dart';
+import 'package:testsoft/signup.dart';
 import 'slide.dart';
 
 class splashscreen extends StatefulWidget {
@@ -25,7 +27,7 @@ class _splashscreenState extends State<splashscreen> {
         fit: StackFit.expand,
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(color: Colors.black),
+            decoration: BoxDecoration(color: Colors.indigo.withOpacity(0.7)),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -40,7 +42,7 @@ class _splashscreenState extends State<splashscreen> {
                         backgroundColor: Colors.white,
                         radius: 40.0,
                         child: Icon(
-                          Icons.assignment,
+                          Icons.code,
                           color: Colors.black,
                           size: 40.0,
                         ),
@@ -49,7 +51,7 @@ class _splashscreenState extends State<splashscreen> {
                         padding: EdgeInsets.only(top: 10.0),
                       ),
                       Text(
-                        "SVCE QUIZ APP",
+                        "SUNDARAM FINANCE",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 30.0,
@@ -58,18 +60,18 @@ class _splashscreenState extends State<splashscreen> {
                         ),
                       ),
                       Text(
-                        "By FORESE- Initiative by placement cell",
+                        "Enduring values. New age thinking.",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15.0,
+                          fontSize: 20.0,
                           fontFamily: "teko",
                           fontWeight: FontWeight.w400
                         ),
                       ),
-                      Text("(AUTONOMOUS)",
+                      Text("SF QUIZZ - initiative by SIS",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 21.0,
+                        fontSize: 25.0,
                         fontFamily: "teko",
                         fontWeight: FontWeight.w700
                       ),
@@ -89,9 +91,9 @@ class _splashscreenState extends State<splashscreen> {
                     Padding(
                       padding: EdgeInsets.only(top: 20.0),
                     ),
-                    Text("Interview based McQs",
+                    Text("Test your technical knowledge",
                       style: TextStyle(
-                        color: Colors.white24,
+                        color: Colors.black,
                         fontSize: 21.0,
                         fontFamily: "teko",
                         fontWeight: FontWeight.w400

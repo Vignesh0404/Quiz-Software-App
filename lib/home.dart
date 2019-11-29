@@ -15,13 +15,13 @@ class homepage extends StatefulWidget {
 class _homepageState extends State<homepage> {
 
   List<String> images = [
-    "images/py.png",
-    "images/java.png"
+    "images/code.jpg",
+    "images/analysis.jpg"
   ];
 
   List<String> content =[
     "This quiz consists of questions from the basic fundamental programming language python",
-    "WThis quiz consists of questions from the basic fundamental programming language java"
+    "This quiz consists of questions from the basic fundamental Data Analytics"
   ];
 
   Widget customcard(String langname, String image, String content){
@@ -37,7 +37,7 @@ class _homepageState extends State<homepage> {
           
         },
         child: Material(
-          color: Colors.lightBlueAccent,
+          color: Colors.indigo.withOpacity(0.7),
           elevation: 10.0,
           borderRadius: BorderRadius.circular(40.0),
           child: Container(
@@ -108,15 +108,21 @@ class _homepageState extends State<homepage> {
     ]);
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "SVCE QUIZ MASTER",
+        title: 
+         Text(
+          "SIS | SUNDARAM FINANCE",
           style: TextStyle(
             fontSize: 30.0,
            fontFamily: 'Teko',
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
           ),
         ),
+        actions: <Widget>[ //for the search bar
+          IconButton(icon: Icon(Icons.search), onPressed: (){
+            showSearch(context: context, delegate: Datasearch());
+          })
+        ],
       ),
       drawer: new Drawer(
         child: new ListView(
@@ -131,13 +137,17 @@ class _homepageState extends State<homepage> {
               ),
               accountName: new Container(
                 child: Text(
-                  "SVCE QUIZ MASTER",
+                  "\nSUNDARAM QUIZ MASTER",
                 style: TextStyle(
-                   color: Colors.white
+                   color: Colors.white,
+                   fontSize: 20,
+                   fontFamily: "teko"
                 ),
               )),
-              accountEmail: new Text("Powered by FORESE©",
+              accountEmail: new Text("Powered by SIS©",
               style: TextStyle(
+                fontFamily: "teko",
+                fontSize: 20,
                 
               ),
               ),
@@ -154,7 +164,7 @@ class _homepageState extends State<homepage> {
               ),
               new ListTile (
               trailing: new Icon(Icons.info),
-              title: new Text('About | FORESE'),
+              title: new Text('About | SIS'),
               onTap: () {
                 Navigator.of(context).pop();
                        Navigator.of(context).pushNamed(about.routename);
@@ -162,15 +172,15 @@ class _homepageState extends State<homepage> {
               ),
             new ListTile (
               trailing: new Icon(Icons.work),
-              title: new Text('Placements | Tips'),
+              title: new Text('Techincal   | Domains'),
               onTap: () {
                         Navigator.of(context).pop();
                        Navigator.of(context).pushNamed(placements.routename);
                      },
               ),
                new ListTile (
-              trailing: new Icon(Icons.flight),
-              title: new Text('Higher edu   | Tips'),
+              trailing: new Icon(Icons.account_balance),
+              title: new Text('Analytical  | Concepts'),
               onTap: () {
                       Navigator.of(context).pop();
                        Navigator.of(context).pushNamed(higheredu.routename);
@@ -179,7 +189,7 @@ class _homepageState extends State<homepage> {
                new ListTile (
               trailing: new Icon(Icons.web),
               title: new Text('Visit Site'),
-              onTap: () => launch('https://forese.in/')
+              onTap: () => launch('https://vignesh0404.github.io/')
  
                     
               ),
@@ -190,8 +200,8 @@ class _homepageState extends State<homepage> {
               
               ),
               new ListTile (
-              trailing: new Icon(Icons.monetization_on),
-              title: new Text('Donate'),
+              trailing: new Icon(Icons.rate_review),
+              title: new Text('Rate'),
               ),
                new ListTile (
               trailing: new Icon(Icons.close),
@@ -211,10 +221,92 @@ class _homepageState extends State<homepage> {
       ),
       body: ListView(
         children: <Widget>[
-          customcard("Introduction to Python", images[0], content[0]),
-          customcard("Introduction to Java", images[1], content[1]),
+          customcard("Technical Quiz", images[0], content[0]),
+          customcard("Data Analytics", images[1], content[1]),
         ],
       ),
     );
   }
+}
+
+class Datasearch extends SearchDelegate<String> { //flutter has some inbuilt type of functions for search
+  final questions = [ //list which can be searched
+    "python",
+    "java",
+    "c",
+    "c++",
+    "html",
+    "css",
+    "javascript"
+  ];
+
+  final recentSearch = [ //list for displaying the recent search
+   "python",
+   "javascript",
+    "c",
+    "c++",
+    "html",
+    "css",
+  ];
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    // TODO: assign the actions to the search
+    return [
+      IconButton(icon: Icon(Icons.clear),onPressed: (){
+        query = ""; //to clear the content written
+      },)
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    // TODO: leading icon
+    return IconButton(
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+      onPressed: (){
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: show result based on search
+    return homepage();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // TODO: show searches
+    final suggestionlist = query.isEmpty?recentSearch:questions.where((q)=>q.startsWith(query)).toList();
+    return ListView.builder(itemBuilder: (context,index)=>ListTile(
+      onTap: () { //to go the selected quiz
+        showResults(context);
+      },
+      leading: Icon(Icons.code),
+      title: RichText( //to make the searched alphabet bold
+        text: TextSpan(
+          text: suggestionlist[index].substring(0,query.length),
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold
+          ),
+          children: [
+            TextSpan(
+              text: suggestionlist[index].substring(query.length),
+              style: TextStyle(
+                color: Colors.grey
+                )
+            )
+          ]
+        ),
+      ),
+    ),
+    itemCount: suggestionlist.length,
+    );
+  } 
+
 }

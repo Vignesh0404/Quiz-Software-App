@@ -37,7 +37,7 @@ class quizpage extends StatefulWidget {
   @override
   _quizpageState createState() => _quizpageState(mydata);
 }
-//quizpage 28:00
+
 class _quizpageState extends State<quizpage> {
   var mydata;
   _quizpageState(this.mydata);

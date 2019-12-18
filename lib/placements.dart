@@ -11,14 +11,14 @@ class placements extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Techincal Domains ',
+        title: new Text('Placements ',
         style: TextStyle(
           fontFamily: "teko",
           fontSize: 30,
         ),),
       ),
       body: new Center (
-        child: new Text("Techincal   | Domains"),
+        child: new Text("Placements | Tips"),
 
       ),
       

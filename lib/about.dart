@@ -46,7 +46,7 @@ class about extends StatelessWidget {
                   height: 150,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: new ExactAssetImage('images/about.jpg'),
+                      image: new ExactAssetImage('images/code.jpg'),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(75.0)
@@ -58,7 +58,7 @@ class about extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 Text(
-                  "SUNDARAM FINANCE",
+                  "FORESE",
                   style: TextStyle(
                     fontFamily: "teko",
                     fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ class about extends StatelessWidget {
                 ),
                 SizedBox(height: 8.0),
                 Text(
-                  '"Enduring values. New age thinking."',
+                  '"The Placement Cell of SVCE"',
                 style: TextStyle(
                   color: Colors.indigo,
                   fontWeight: FontWeight.bold,
@@ -85,7 +85,7 @@ class about extends StatelessWidget {
                     shadowColor: Colors.indigoAccent,
                     elevation: 7.0,
                     child: GestureDetector(
-                      onTap: () => launch('https://www.sundaramfinance.in/'),
+                      onTap: () => launch('https://www.forese.in/'),
                       child: Center(
                         child: Text(
                           "Know more",
@@ -101,7 +101,7 @@ class about extends StatelessWidget {
                 ),
                 SizedBox(height: 25.0),
                 Text(
-                  "SUNDARAM INFOTECH SOLUTIONS",
+                  "Forum of education by engineers",
                   style: TextStyle(
                     fontFamily: "teko",
                     fontWeight: FontWeight.w400,
@@ -110,7 +110,7 @@ class about extends StatelessWidget {
                 ),
                 Center(
                   child: Text(
-                    "\n“We are the backbone of SF”",
+                    "\n“Improving employability of students”",
                     style: TextStyle(
                       fontFamily: "Poppins, sans-serif",
                       fontStyle: FontStyle.italic,

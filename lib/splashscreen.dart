@@ -27,7 +27,7 @@ class _splashscreenState extends State<splashscreen> {
         fit: StackFit.expand,
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(color: Colors.indigo.withOpacity(0.7)),
+            decoration: BoxDecoration(color: Colors.black),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -42,7 +42,7 @@ class _splashscreenState extends State<splashscreen> {
                         backgroundColor: Colors.white,
                         radius: 40.0,
                         child: Icon(
-                          Icons.code,
+                          Icons.assignment,
                           color: Colors.black,
                           size: 40.0,
                         ),
@@ -51,7 +51,7 @@ class _splashscreenState extends State<splashscreen> {
                         padding: EdgeInsets.only(top: 10.0),
                       ),
                       Text(
-                        "SUNDARAM FINANCE",
+                        "SVCE QUIZ APP",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 30.0,
@@ -60,7 +60,7 @@ class _splashscreenState extends State<splashscreen> {
                         ),
                       ),
                       Text(
-                        "Enduring values. New age thinking.",
+                        "By FORESE- Initiative by the placement cell",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
@@ -68,7 +68,7 @@ class _splashscreenState extends State<splashscreen> {
                           fontWeight: FontWeight.w400
                         ),
                       ),
-                      Text("SF QUIZZ - initiative by SIS",
+                      Text("(AUTONOMOUS)",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 25.0,
@@ -91,9 +91,9 @@ class _splashscreenState extends State<splashscreen> {
                     Padding(
                       padding: EdgeInsets.only(top: 20.0),
                     ),
-                    Text("Test your technical knowledge",
+                    Text("interview based McQs",
                       style: TextStyle(
-                        color: Colors.black,
+                        color: Colors.grey,
                         fontSize: 21.0,
                         fontFamily: "teko",
                         fontWeight: FontWeight.w400

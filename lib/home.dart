@@ -110,7 +110,7 @@ class _homepageState extends State<homepage> {
       appBar: AppBar(
         title: 
          Text(
-          "SIS | SUNDARAM FINANCE",
+          "FORESE - Placement Cell",
           style: TextStyle(
             fontSize: 30.0,
            fontFamily: 'Teko',
@@ -137,14 +137,14 @@ class _homepageState extends State<homepage> {
               ),
               accountName: new Container(
                 child: Text(
-                  "\nSUNDARAM QUIZ MASTER",
+                  "\nSVCE QUIZ MASTER",
                 style: TextStyle(
                    color: Colors.white,
                    fontSize: 20,
                    fontFamily: "teko"
                 ),
               )),
-              accountEmail: new Text("Powered by SIS©",
+              accountEmail: new Text("Powered by Forese© ",
               style: TextStyle(
                 fontFamily: "teko",
                 fontSize: 20,
@@ -164,7 +164,7 @@ class _homepageState extends State<homepage> {
               ),
               new ListTile (
               trailing: new Icon(Icons.info),
-              title: new Text('About | SIS'),
+              title: new Text('About | FORESE'),
               onTap: () {
                 Navigator.of(context).pop();
                        Navigator.of(context).pushNamed(about.routename);
@@ -172,7 +172,7 @@ class _homepageState extends State<homepage> {
               ),
             new ListTile (
               trailing: new Icon(Icons.work),
-              title: new Text('Techincal   | Domains'),
+              title: new Text('Placements | Tips'),
               onTap: () {
                         Navigator.of(context).pop();
                        Navigator.of(context).pushNamed(placements.routename);
@@ -180,7 +180,7 @@ class _homepageState extends State<homepage> {
               ),
                new ListTile (
               trailing: new Icon(Icons.account_balance),
-              title: new Text('Analytical  | Concepts'),
+              title: new Text('HigherEdu | Tips'),
               onTap: () {
                       Navigator.of(context).pop();
                        Navigator.of(context).pushNamed(higheredu.routename);
@@ -222,7 +222,7 @@ class _homepageState extends State<homepage> {
       body: ListView(
         children: <Widget>[
           customcard("Technical Quiz", images[0], content[0]),
-          customcard("Data Analytics", images[1], content[1]),
+          customcard("Verbal Test", images[1], content[1]),
         ],
       ),
     );

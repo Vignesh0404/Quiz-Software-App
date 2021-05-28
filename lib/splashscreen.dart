@@ -1,26 +1,27 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:testsoft/home.dart';
 import 'package:testsoft/login.dart';
 import 'package:testsoft/signup.dart';
 import 'slide.dart';
 
 class splashscreen extends StatefulWidget {
   @override
-  _splashscreenState createState() => _splashscreenState(); 
+  _splashscreenState createState() => _splashscreenState();
 }
 
 class _splashscreenState extends State<splashscreen> {
-  
-  @override 
-  void initState(){
+  @override
+  void initState() {
     super.initState();
-    Timer(Duration(seconds: 5), (){
+    Timer(Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => SlideScreen(),
+        builder: (context) => homepage(),
       ));
     });
   }
-  @override 
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -53,29 +54,27 @@ class _splashscreenState extends State<splashscreen> {
                       Text(
                         "SVCE QUIZ APP",
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 30.0,
-                          fontFamily: "teko",
-                          fontWeight: FontWeight.w700
-                        ),
+                            color: Colors.white,
+                            fontSize: 30.0,
+                            fontFamily: "teko",
+                            fontWeight: FontWeight.w700),
                       ),
                       Text(
                         "By FORESE- Initiative by the placement cell",
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontFamily: "teko",
-                          fontWeight: FontWeight.w400
-                        ),
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontFamily: "teko",
+                            fontWeight: FontWeight.w400),
                       ),
-                      Text("(AUTONOMOUS)",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25.0,
-                        fontFamily: "teko",
-                        fontWeight: FontWeight.w700
-                      ),
-                         )
+                      Text(
+                        "(AUTONOMOUS)",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25.0,
+                            fontFamily: "teko",
+                            fontWeight: FontWeight.w700),
+                      )
                     ],
                   ),
                 ),
@@ -91,14 +90,14 @@ class _splashscreenState extends State<splashscreen> {
                     Padding(
                       padding: EdgeInsets.only(top: 20.0),
                     ),
-                    Text("interview based McQs",
+                    Text(
+                      "interview based McQs",
                       style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 21.0,
-                        fontFamily: "teko",
-                        fontWeight: FontWeight.w400
-                      ),
-                         )
+                          color: Colors.grey,
+                          fontSize: 21.0,
+                          fontFamily: "teko",
+                          fontWeight: FontWeight.w400),
+                    )
                   ],
                 ),
               )

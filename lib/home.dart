@@ -13,78 +13,129 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
-  List<String> images = ["images/code.jpg", "images/analysis.jpg"];
+  List<String> images = [
+    "images/py.png",
+    "images/linux.png",
+    "images/java.png"
+  ];
 
   List<String> content = [
     "This quiz consists of questions from the basic fundamental programming language python",
-    "This quiz consists of questions from the basic fundamental Data Analytics"
+    "This quiz consists of questions from the basic fundamentals of Linux",
+    "This quiz consists of questions from the basic fundamental of Java"
   ];
 
-  Widget customcard(String langname, String image, String content) {
+  Widget quizCard(
+      String langname, String image, String content, String qAsset) {
     return Padding(
       padding: EdgeInsets.all(
         20.0,
       ),
       child: InkWell(
         onTap: () {
-          Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => getquiz()));
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (context) => getquiz(
+                    questionAsset: qAsset,
+                  )));
         },
         child: Material(
-          color: Colors.indigo.withOpacity(0.7),
-          elevation: 10.0,
-          borderRadius: BorderRadius.circular(40.0),
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 10.0,
-                  ),
-                  child: Material(
-                    elevation: 5.0,
-                    borderRadius: BorderRadius.circular(100.0),
-                    child: Container(
-                      height: 150.0,
-                      width: 150.0,
-                      child: ClipOval(
-                        child: Image(
-                          fit: BoxFit.contain,
-                          image: AssetImage(
-                            image,
+            color: Colors.white,
+            elevation: 10.0,
+            borderRadius: BorderRadius.circular(20.0),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage(image),
+                        backgroundColor: Colors.transparent,
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Quiz 1',
+                            style: TextStyle(
+                              color: Colors.grey.shade300,
+                              fontSize: 20.0,
+                              fontFamily: 'Teko',
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal,
+                            ),
                           ),
-                        ),
+                          Text(
+                            langname,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20.0,
+                              fontFamily: 'Teko',
+                              fontWeight: FontWeight.w800,
+                              fontStyle: FontStyle.normal,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    content,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16.0,
+                      fontFamily: 'Odibee Sans',
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Center(
+                    child: Container(
+                      height: 45,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFEC4E4E),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            '                 BEGIN',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Teko',
+                                fontWeight: FontWeight.w700,
+                                fontSize: 22),
+                          ),
+                          Spacer(),
+                          Container(
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red.shade200),
+                              child: Icon(Icons.arrow_forward,
+                                  color: Colors.white)),
+                          SizedBox(
+                            width: 5,
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ),
-                Center(
-                  child: Text(
-                    langname,
-                    style: TextStyle(
-                        fontSize: 24.0,
-                        color: Colors.white,
-                        fontFamily: "Teko",
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text(
-                    content,
-                    style: TextStyle(
-                        fontSize: 16.0,
-                        color: Colors.black,
-                        fontFamily: "Teko",
-                        fontWeight: FontWeight.w700),
-                    maxLines: 3,
-                    textAlign: TextAlign.justify,
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
+                ],
+              ),
+            )),
       ),
     );
   }
@@ -96,10 +147,10 @@ class _homepageState extends State<homepage> {
       DeviceOrientation.portraitDown, DeviceOrientation.portraitUp,
     ]);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey.shade100,
         elevation: 0.0,
         title: Text(
           "FORESE - Placement Cell",
@@ -210,8 +261,44 @@ class _homepageState extends State<homepage> {
       ),
       body: ListView(
         children: <Widget>[
-          customcard("Technical Quiz", images[0], content[0]),
-          customcard("Verbal Test", images[1], content[1]),
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0, right: 16),
+            child: Row(
+              children: [
+                Text(
+                  'Top Quiz Categories',
+                  style: TextStyle(
+                      fontFamily: 'Teko',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700),
+                ),
+                Spacer(),
+                Container(
+                  height: 35,
+                  width: 60,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.lightGreen.shade300),
+                  child: Center(
+                    child: Text(
+                      'View All',
+                      style: TextStyle(
+                          fontFamily: 'Teko',
+                          fontSize: 18,
+                          color: Colors.green,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          quizCard("Introduction to python", images[0], content[0],
+              'assets/python.json'),
+          quizCard("Introduction to linux", images[1], content[1],
+              'assets/java.json'),
+          quizCard("Introduction to Java", images[2], content[2],
+              'assets/java.json'),
         ],
       ),
     );

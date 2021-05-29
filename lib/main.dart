@@ -17,18 +17,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "SVCE QUIZ MASTER",
       theme: ThemeData(
-        
         primarySwatch: Colors.indigo,
       ),
       home: splashscreen(),
-      
       routes: {
-        homepage.routename:(ctx) => homepage(),
-        placements.routename:(ctx) => placements(),
-        higheredu.routename:(ctx) => higheredu(),
-        about.routename:(ctx) => about(),
-        forgotpass.routename:(ctx) =>forgotpass(),
-        signup.routename:(ctx) =>signup()
+        homepage.routename: (ctx) => homepage(),
+        placements.routename: (ctx) => placements(),
+        higheredu.routename: (ctx) => higheredu(),
+        about.routename: (ctx) => about(),
+        forgotpass.routename: (ctx) => forgotpass(),
+        signup.routename: (ctx) => signup()
       },
     );
   }

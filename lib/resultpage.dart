@@ -10,11 +10,11 @@ class resultpage extends StatefulWidget {
 }
 
 class _resultpageState extends State<resultpage> {
-  List<String> images = [
-    //a list to display different images for differnt marks
-    "images/success.png",
-    "images/bad.png"
-  ];
+  // List<String> images = [
+  //   //a list to display different images for differnt marks
+  //   "images/success.png",
+  //   "images/bad.png"
+  // ];
   String msg;
   String img;
 
@@ -23,10 +23,10 @@ class _resultpageState extends State<resultpage> {
     // to display different images and messages based on the marks scored
 
     if (marks < 3) {
-      img = images[1];
+      //img = images[1];
       msg = "Keep working on it! You'll eventually get there";
     } else if (marks > 3) {
-      img = images[0];
+      //img = images[0];
       msg = "Congragulations! Keep Quizzing";
     }
     super.initState();
@@ -74,13 +74,23 @@ class _resultpageState extends State<resultpage> {
             SizedBox(
               height: 20,
             ),
-            Container(
-              height: 120,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.grey.shade200,
-                  image: DecorationImage(image: AssetImage(img))),
-            ),
+            (marks >= 3)
+                ? Container(
+                    height: 120,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey.shade200,
+                        image: DecorationImage(
+                            image: AssetImage('images/success.png'))),
+                  )
+                : Container(
+                    height: 120,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey.shade200,
+                        image: DecorationImage(
+                            image: AssetImage('images/bad.png'))),
+                  ),
             SizedBox(
               height: 20,
             ),

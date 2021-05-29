@@ -6,12 +6,13 @@ import 'package:flutter/services.dart';
 import 'package:testsoft/resultpage.dart';
 
 class getquiz extends StatelessWidget {
-  const getquiz({Key key}) : super(key: key);
+  const getquiz({Key key, this.questionAsset}) : super(key: key);
+  final String questionAsset;
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: DefaultAssetBundle.of(context).loadString("assets/python.json"),
+      future: DefaultAssetBundle.of(context).loadString(questionAsset),
       builder: (context, snapshot) {
         List mydata = json.decode(snapshot.data.toString());
         if (mydata == null) {
@@ -40,7 +41,7 @@ class _quizpageState extends State<quizpage> {
   _quizpageState(this.mydata);
   int marks = 0; //fo the initial marks to be 0
   int timer = 15; //setting the timer seconds
-  String showtimer1 = "15";
+  int showtimer1 = 15;
   int i = 1; //to make sure the user does not click more than one option
   Color colordisp = Colors.black26;
   Color rightans = Colors.green[300];
@@ -98,7 +99,7 @@ class _quizpageState extends State<quizpage> {
         } else {
           timer = timer - 1;
         }
-        showtimer1 = timer.toString();
+        showtimer1 = timer;
       });
     });
   }
@@ -122,29 +123,46 @@ class _quizpageState extends State<quizpage> {
 
   Widget choicebutton(String choice) {
     return Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: 10.0,
-        horizontal: 20.0,
-      ),
-      child: MaterialButton(
-        onPressed: () => answercheck(choice),
-        child: Text(
-          mydata[1][i.toString()][
-              choice], //getting the options from the json file using the string choice
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: 16.0,
-              fontFamily: "Quando",
-              fontWeight: FontWeight.bold),
-          maxLines: 1, //only line is allowed in the button
+      padding: EdgeInsets.all(16),
+      child: GestureDetector(
+        onTap: () => answercheck(choice),
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(color: buttoncolor[choice]),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Text(
+                  ' ' + mydata[1][i.toString()][choice],
+                  style: TextStyle(
+                      fontFamily: 'Teko',
+                      fontWeight: FontWeight.w100,
+                      color: Colors.black,
+                      fontSize: 23),
+                ),
+                Spacer(),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: buttoncolor[choice]),
+                      shape: BoxShape.circle),
+                  child: Center(
+                    child: Icon(
+                      Icons.check,
+                      color: buttoncolor[choice],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+              ],
+            ),
+          ),
         ),
-        splashColor: Colors.white54,
-        color: buttoncolor[choice], //to use the respective color of choice
-        highlightColor: Colors.grey,
-        minWidth: 200.0,
-        height: 50.0,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
       ),
     );
   }
@@ -180,59 +198,156 @@ class _quizpageState extends State<quizpage> {
                 ));
       },
       child: Scaffold(
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 3,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white12,
-                ),
-                padding: EdgeInsets.all(16.0),
-                alignment: Alignment.bottomCenter,
-                child: Text(
-                  mydata[0][i
-                      .toString()], //to get respective questions and converting a string
-                  style: TextStyle(
-                      fontSize: 18.0,
-                      fontFamily: "Quando",
-                      fontWeight: FontWeight.w700),
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 6,
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    choicebutton('a'),
-                    choicebutton('b'),
-                    choicebutton('c'),
-                    choicebutton('d'),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                alignment: Alignment.topCenter,
-                decoration: BoxDecoration(color: Colors.green[200]),
-                child: Center(
-                  child: Text(
-                    showtimer1,
-                    style: TextStyle(
-                      fontFamily: "teko",
-                      fontSize: 40.0,
-                      fontWeight: FontWeight.w700,
+        body: SafeArea(
+            child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'PYTHON QUIZZ',
+                          style: TextStyle(
+                              fontFamily: 'Teko',
+                              color: Colors.grey.shade500,
+                              fontWeight: FontWeight.w300,
+                              fontSize: 18),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              'Question 0' + mydata[0][i.toString()][0] + ' ',
+                              style: TextStyle(
+                                  fontFamily: 'Teko',
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.black,
+                                  fontSize: 30),
+                            ),
+                            Text(
+                              '/10',
+                              style: TextStyle(
+                                  fontFamily: 'Teko',
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.grey.shade500,
+                                  fontSize: 28),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
                   ),
+                  Spacer(),
+                  Column(
+                    children: [
+                      (showtimer1 > 5)
+                          ? Icon(
+                              Icons.timer_outlined,
+                              color: Colors.green.shade300,
+                            )
+                          : Icon(
+                              Icons.timer_outlined,
+                              color: Colors.red.shade300,
+                            ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      (showtimer1 > 5)
+                          ? Text(
+                              showtimer1.toString(),
+                              style: TextStyle(
+                                  fontFamily: 'Teko',
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.green.shade300,
+                                  fontSize: 25),
+                            )
+                          : Text(
+                              showtimer1.toString(),
+                              style: TextStyle(
+                                  fontFamily: 'Teko',
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.red.shade300,
+                                  fontSize: 25),
+                            )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 10,
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                width: double.infinity,
+                child: Text(
+                  mydata[0][i.toString()],
+                  style: TextStyle(
+                      fontFamily: 'Odibee Sans',
+                      fontWeight: FontWeight.w100,
+                      color: Colors.black,
+                      fontSize: 23),
                 ),
               ),
-            )
-          ],
-        ),
+              SizedBox(
+                height: 40,
+              ),
+              choicebutton('a'),
+              choicebutton('b'),
+              choicebutton('c'),
+              choicebutton('d'),
+              Spacer(),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Icon(Icons.settings_power),
+                        Text(
+                          '  Quit Quiz',
+                          style: TextStyle(
+                              fontFamily: 'Teko',
+                              fontWeight: FontWeight.w100,
+                              color: Colors.black,
+                              fontSize: 23),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  Container(
+                    height: 50,
+                    width: 90,
+                    decoration: BoxDecoration(
+                        color: Color(0xFFEC4E4E),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Center(
+                      child: Text(
+                        'Next',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Teko',
+                            fontWeight: FontWeight.w700,
+                            fontSize: 22),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
+        )),
       ),
     );
   }

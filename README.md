@@ -9,7 +9,7 @@
 
 ## Getting Started
 FORESE - SVCE is a forum created for the sole purpose of equipping engineering students with team management, interpersonal and leadership skills. The forum is under the aegis of the Placement Cell. <br> <br>
-<Strong>SVCE PLACEMENTS TEST -</Strong> is an elegant and simple mobile application which was built as part of the placement cell of sri venkateswara college of engineering, the application was used by the <Strong>pre final year students</Strong> to test their technical/apptitude skills.<br><br> The test results of the students in each subject were monitored and was used to map the students with the companies that they can be eligible to interview for. The test scores can be downloaded as a PDF from the app and the students were asked to carry the scores for the interview. 
+<Strong>SVCE PLACEMENTS TEST - </Strong>is an elegant and simple mobile application that was built as part of the placement cell of Sri Venkateswara college of engineering, the application was used by the pre-final year students to test their technical/aptitude skills.<br><br> The test results of the students in each subject were monitored and was used to map the students with the companies that they can be eligible to interview for. The test scores can be downloaded as a PDF from the app and the students were asked to carry the scores for the interview. 
 <br>
 ## Tech Stack
 <img height="52" src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png" /></a>  <img height="82" src="https://download.logo.wine/logo/MySQL/MySQL-Logo.wine.png" /></a>
